@@ -1,0 +1,24 @@
+{
+    "authors": [
+        {
+            "name": "hai vo",
+            "email": "vovanthanhhai.96@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Models\\": "src/models",
+            "Migrations\\": "database/migrations"
+        },
+        "files": [
+            "database/helper.php",
+            "config/helper.php"
+        ]
+    },
+    "name": "hai/usea-interview",
+    "require": {
+        "doctrine/orm": "^3.1",
+        "doctrine/migrations": "^3.7",
+        "symfony/cache": "^6.4"
+    }
+}
