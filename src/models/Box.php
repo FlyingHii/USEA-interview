@@ -14,9 +14,13 @@ class Box
     #[Id, Column(type: 'integer')]
     #[GeneratedValue]
 //    #[SequenceGenerator(sequenceName: 'message_seq', initialValue: 1, allocationSize: 100)]
-    protected int|null $id = null;
-    private $name;
-
+    public int|null $id = null;
+    #[Column]
+    public $name = 'hello';
+    #[Column]
+    public $prayer_zone = 'hello';
+    #[Column]
+    public $subscriber_id = 'hello';
 //    /**
 //     * @return mixed
 //     */
