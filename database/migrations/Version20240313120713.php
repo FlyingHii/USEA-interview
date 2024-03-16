@@ -24,9 +24,16 @@ final class Version20240313120713 extends AbstractMigration
         $table->addColumn('name', 'string', ['length' => 255]);
         $table->setPrimaryKey(['id']);
 
+        $table = $schema->createTable('boxes');
+        $table->addColumn('id', 'integer', ['autoincrement' => true]);
+        $table->addColumn('name', 'string', ['length' => 255]);
+        $table->addColumn('prayer_zone', 'string', ['length' => 255]);
+        $table->addColumn('subscriber_id', 'integer');
+        $table->setPrimaryKey(['id']);
+
         $table = $schema->createTable('songs');
         $table->addColumn('id', 'integer', ['autoincrement' => true]);
-        $table->addColumn('title', 'string', ['length' => 255]);
+        $table->addColumn('name', 'string', ['length' => 255]);
         $table->addColumn('subscriber_id', 'integer');
         $table->addColumn('box_id', 'integer');
         $table->addColumn('prayer_time_date', 'datetime');
@@ -34,18 +41,17 @@ final class Version20240313120713 extends AbstractMigration
         $table->addColumn('prayer_time', 'string', ['length' => 255]);
         $table->setPrimaryKey(['id']);
         $table->addForeignKeyConstraint(
+            'boxes',   // referenced table name
+            ['box_id'], // local column(s)
+            ['id'],           // referenced column(s)
+            ['onDelete' => 'CASCADE'] // options
+        );
+        $table->addForeignKeyConstraint(
             'subscribers',   // referenced table name
             ['subscriber_id'], // local column(s)
             ['id'],           // referenced column(s)
             ['onDelete' => 'CASCADE'] // options
         );
-
-        $table = $schema->createTable('boxes');
-        $table->addColumn('id', 'integer', ['autoincrement' => true]);
-        $table->addColumn('name', 'string', ['length' => 255]);
-        $table->addColumn('prayer_zone', 'string', ['length' => 255]);
-        $table->addColumn('subscriber_id', 'integer');
-        $table->setPrimaryKey(['id']);
     }
 
     public function down(Schema $schema): void

@@ -13,8 +13,7 @@ class Box
 {
     #[Id, Column(type: 'integer')]
     #[GeneratedValue]
-//    #[SequenceGenerator(sequenceName: 'message_seq', initialValue: 1, allocationSize: 100)]
-    public int|null $id = null;
+    public int|null $id;
     #[Column]
     public $name = 'hello';
     #[Column]

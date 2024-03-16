@@ -8,17 +8,21 @@
     "autoload": {
         "psr-4": {
             "Models\\": "src/models",
+            "Services\\": "src/services",
             "Migrations\\": "database/migrations"
         },
         "files": [
             "database/helper.php",
-            "config/helper.php"
+            "config/helper.php",
+            "src/helper.php"
         ]
     },
     "name": "hai/usea-interview",
     "require": {
         "doctrine/orm": "^3.1",
         "doctrine/migrations": "^3.7",
-        "symfony/cache": "^6.4"
+        "symfony/cache": "^6.4",
+        "guzzlehttp/guzzle": "^7.8",
+        "php-di/php-di": "^7.0"
     }
 }
