@@ -8,7 +8,7 @@ class ESolatApi
 {
     private Client $guzzle;
 
-    const IS_TESTING = true;
+    const IS_TESTING = false;
 
     public function __construct(Client $guzzle)
     {
