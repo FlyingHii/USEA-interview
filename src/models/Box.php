@@ -15,11 +15,11 @@ class Box
     #[GeneratedValue]
     public int|null $id;
     #[Column]
-    public $name = 'hello';
+    public $name;
     #[Column]
-    public $prayer_zone = 'hello';
+    public $prayer_zone;
     #[Column]
-    public $subscriber_id = 'hello';
+    public $subscriber_id;
 //    /**
 //     * @return mixed
 //     */

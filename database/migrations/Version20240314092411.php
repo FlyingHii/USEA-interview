@@ -23,7 +23,7 @@ final class Version20240314092411 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // Database connection configuration
-        $entityManager = getEntityManager();
+        $entityManager = entityManager();
         $seeder = function ($data, $className) use ($entityManager) {
             foreach ($data as $item) {
                 $box = new $className();
