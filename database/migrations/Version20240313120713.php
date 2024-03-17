@@ -40,24 +40,24 @@ final class Version20240313120713 extends AbstractMigration
         $table->addColumn('prayer_time_seq', 'integer');
         $table->addColumn('prayer_time', 'string', ['length' => 255]);
         $table->setPrimaryKey(['id']);
+        $table->addUniqueIndex(['prayer_time_seq']);
         $table->addForeignKeyConstraint(
-            'boxes',   // referenced table name
-            ['box_id'], // local column(s)
-            ['id'],           // referenced column(s)
-            ['onDelete' => 'CASCADE'] // options
+            'boxes',
+            ['box_id'],
+            ['id'],
+            ['onDelete' => 'CASCADE']
         );
         $table->addForeignKeyConstraint(
-            'subscribers',   // referenced table name
-            ['subscriber_id'], // local column(s)
-            ['id'],           // referenced column(s)
-            ['onDelete' => 'CASCADE'] // options
+            'subscribers',
+            ['subscriber_id'],
+            ['id'],
+            ['onDelete' => 'CASCADE']
         );
     }
 
     public function down(Schema $schema): void
     {
-        // this down() migration is auto-generated, please modify it to your needs
-        $schema->createTable('subscribers');
+        $schema->dropTable('subscribers');
         $schema->dropTable('songs');
         $schema->dropTable('boxes');
     }

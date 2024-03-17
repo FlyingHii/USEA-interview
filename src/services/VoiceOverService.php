@@ -15,8 +15,10 @@ class VoiceOverService
         $lastPrayerSeqNr = $em->createQueryBuilder()->select('s.prayer_time_seq')
             ->from(Song::class, 's')
             ->orderBy('s.prayer_time_seq', 'DESC')
-            ->setMaxResults(1)->getQuery()->getSingleResult()['prayer_time_seq'] ?? 0;
-
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getSingleResult();
+        $lastPrayerSeqNr = $lastPrayerSeqNr['prayer_time_seq'] ?? 0;
         foreach ($data['prayerTime'] as $prayerTime) {
             foreach ([
                          'imsak',
