@@ -6,6 +6,13 @@ This project fetches and stores voiceovers from the [e-Solat](https://www.e-sola
 access to prayer times and announcements up to 7 days in advance.
 
 ## Prerequisites
+- doctrine/orm: perform CRUD. Use it instead of build the SQL from scratch.
+- doctrine/migrations: manage DB versions.
+- symfony/cache: come along with Doctrine ORM Setup metadata (store ORM configuration)
+- guzzlehttp/guzzle: Call E-Solat API.
+- php-di/php-di: Service Container & Autowired (auto dependency inject)
+
+**Note**: these libs is chosen base on the criteria: easy to use, popular, good performance & latest update.
 
 ## Installation and Configuration
 
