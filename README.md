@@ -5,6 +5,8 @@
 This project fetches and stores voiceovers from the [e-Solat](https://www.e-solat.gov.my/) website, providing users with
 access to prayer times and announcements up to 7 days in advance.
 
+## Prerequisites
+
 ## Installation and Configuration
 
 To use this project, follow these steps:
@@ -62,8 +64,8 @@ To run the code, follow these steps:
 
 - The DB should be improved. The `songs` table columns is duplicated with the other tables. In conclusion, our DB should be refactored like this:
 - New tables:
-`prayers`: id, name, zone (unique)
-`boxes`: id, name, sub_id, pray_id (FK to prayers.id)
-`songs`: id, name, box_id
-`voiceover`: id, prayer_time_date, prayer_time, song_id (fk to songs.id, unique)
-`subscribers`: (the same)
+    - `prayers`: id, name, zone (unique)
+    - `boxes`: id, name, sub_id, pray_id (FK to prayers.id)
+    - `songs`: id, name, box_id (FK)
+    - `voiceover`: id, prayer_time_date, prayer_time, song_id (fk to songs.id, unique)
+    - `subscribers`: id, name
