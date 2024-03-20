@@ -11,7 +11,7 @@ To use this project, follow these steps:
 
 1. **Clone the repository:**
 
-    ```bash
+    ```bashprayer_time_seq
     git clone https://github.com/FlyingHii/USEA-interview.git
     ```
 
@@ -60,11 +60,10 @@ To run the code, follow these steps:
 
 ### Future Development
 
-- Implement a user-friendly interface for easier navigation.
-- Enhance error handling and reporting for a smoother user experience.
-
-### Future Tasks
-
-- Improve data fetching efficiency.
-- Add support for additional languages.
-- Implement automated testing for reliability.
+- The DB should be improved. The `songs` table columns is duplicated with the other tables. In conclusion, our DB should be refactored like this:
+- New tables:
+`prayers`: id, name, zone (unique)
+`boxes`: id, name, sub_id, pray_id (FK to prayers.id)
+`songs`: id, name, box_id
+`voiceover`: id, prayer_time_date, prayer_time, song_id (fk to songs.id, unique)
+`subscribers`: (the same)
