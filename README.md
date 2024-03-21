@@ -76,3 +76,4 @@ To run the code, follow these steps:
     - `songs`: id, name, box_id (FK)
     - `voiceover`: id, prayer_time_date, prayer_time, song_id (fk to songs.id, unique)
     - `subscribers`: id, name
+- Add cron job to fetch automatically & in background. Add queue to manage job sequently.
