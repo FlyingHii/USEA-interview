@@ -10,7 +10,6 @@ return [
 
     'migrations_paths' => [
         'Migrations' => '../database/migrations',
-//        'MyProject\Component\Migrations' => './Component/MyProject/Migrations',
     ],
 
     'all_or_nothing' => true,
